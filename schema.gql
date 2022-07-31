@@ -1,0 +1,47 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type SongType {
+  id: ID!
+  imageUri: String!
+  uri: String!
+  title: String!
+  artist: String!
+}
+
+type AlbumType {
+  id: ID!
+  name: String!
+  by: String!
+  numberOfLikes: Int!
+  imageUri: String!
+  artistsHeadline: String!
+  songs: [String!]!
+}
+
+type Query {
+  songs: [SongType!]!
+  albums: [AlbumType!]!
+}
+
+type Mutation {
+  createSong(input: SongInput!): SongType!
+  createAlbum(input: AlbumInput!): AlbumType!
+}
+
+input SongInput {
+  imageUri: String!
+  uri: String!
+  title: String!
+  artist: String!
+}
+
+input AlbumInput {
+  name: String!
+  by: String!
+  numberOfLikes: Int!
+  imageUri: String!
+  artistsHeadline: String!
+  songs: [String!]!
+}
